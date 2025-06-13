@@ -1,0 +1,600 @@
+.combo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: 200px;
+}
+
+.cartlog1 {
+  height: 40px;
+}
+
+.text-content {
+  display: flex;
+  flex-direction: column;
+}
+
+
+
+  /* Panel styling *//**//**//**//**//**//**//**//**/
+  .category-panel {
+    position: absolute;
+    top: 100%; /* right below the search bar */
+    left: 0;
+    width: 100%;
+    max-width: 400px;
+    background: white;
+    border: 1px solid #ddd;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    border-radius: 8px;
+    padding: 1rem;
+    display: none;
+    z-index: 1000;
+  }
+
+  .category-panel.show {
+    display: block;
+  }
+
+  .category-item {
+    padding: 0.5rem 0;
+    cursor: pointer;
+  }
+
+  .category-item:hover {
+    background-color: #f0f0f0;
+  }
+
+  /* Container to position relative for absolute positioning */
+  .search-bar-wrapper {
+    position: relative;
+  }
+
+  /* Style the categories button */
+  .categories-btn {
+    background: transparent;
+    border: none;
+    font-weight: 600;
+    cursor: pointer;
+    padding: 0.375rem 0.75rem;
+  }
+
+
+
+
+#close {
+  background: transparent;
+  border: none;
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #333;
+  cursor: pointer;
+  padding: 5px 10px;
+  line-height: 1;
+  border-radius: 4px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+#close:hover {
+  background-color: #f44336;  /* red background on hover */
+  color: white;               /* white cross on hover */
+}
+
+
+
+/**Categorie*//**//**//**//**//**//**//**//**//**//**/
+
+.t1{
+  padding-left: 15px;
+  margin: 0px;
+}
+.category-item{
+  border-radius: 7px;
+}
+
+
+
+
+
+.cart-text {
+  color: #1a5cd8 !important;
+}
+
+.cart-badge {
+  background-color: #1a5cd8 !important;
+  color: white !important;
+}
+
+
+/*  */
+.filter-categories {
+  background: transparent;
+  border: none;
+  font-weight: 600;
+  cursor: pointer;
+  padding: 0.375rem 0.75rem;
+  font-size: 1rem;
+  appearance: none;           /* Remove native dropdown arrow */
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  position: relative;
+  padding-right: 2rem;        /* Space for custom arrow */
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%23000' viewBox='0 0 24 24'%3E%3Cpath d='M7 10l5 5 5-5z'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 0.75rem center;
+  background-size: 1rem;
+}
+
+.filter-categories:focus {
+  outline: none;
+}
+
+
+
+/*Categorie decoration*//**//**//**//**//**//**//**//**//**//**/
+/* Hot: fiery orange background, with 🔥 emoji prepended */
+/* 🔥 Trending (3rd last) */
+.navbar-nav > .nav-item:nth-last-child(3) .nav-link {
+  color: #0077b6; /* deep light blue */
+  font-weight: 600;
+  font-size: 17px;
+  position: relative;
+  padding-left: 26px;
+  transition: color 0.3s ease;
+}
+
+.navbar-nav > .nav-item:nth-last-child(3) .nav-link::before {
+  content: "🔥";
+  position: absolute;
+  left: 4px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 16px;
+  opacity: 0.7;
+}
+
+.navbar-nav > .nav-item:nth-last-child(3) .nav-link:hover {
+  color: #0096c7;
+}
+
+/* 💸 Sales (2nd last) */
+.navbar-nav > .nav-item:nth-last-child(2) .nav-link {
+  color: #005f73; /* dark teal-blue */
+  font-weight: 600;
+  font-size: 17px;
+  position: relative;
+  padding-right: 26px;
+  transition: color 0.3s ease;
+}
+
+.navbar-nav > .nav-item:nth-last-child(2) .nav-link::after {
+  content: "%";
+  background-color: #48cae4; /* soft blue badge */
+  color: #023e8a;
+  font-weight: 700;
+  font-size: 13px;
+  padding: 2px 3px;
+  border-radius: 50%;
+  position: absolute;
+  right: 4px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.navbar-nav > .nav-item:nth-last-child(2) .nav-link:hover {
+  color: #0096c7;
+}
+
+/* 🖤 Black Friday (last) */
+.navbar-nav > .nav-item:nth-last-child(1) .nav-link {
+  background-color: #edf6f9;
+  color: #03045e;
+  font-weight: 700;
+  font-size: 17px;
+  padding: 6px 12px;
+  border-radius: 6px;
+  transition: background-color 0.3s ease;
+  border: 1px solid #ade8f4;
+}
+
+.navbar-nav > .nav-item:nth-last-child(1) .nav-link:hover {
+  background-color: #d0f4ff;
+}
+
+
+
+
+/*SWIPERS*//**//**//**//**//**//**//**//**/
+
+#used-market-banner {
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #f4faff;
+}
+
+/* Banner content box style */
+#used-market-banner .banner-content {
+  background-color: rgba(255, 255, 255, 0.95);
+  border-radius: 1rem;
+  box-shadow: 0 4px 16px rgba(0, 123, 255, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+#used-market-banner .banner-content:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 6px 20px rgba(0, 123, 255, 0.15);
+}
+
+/* Typography */
+#used-market-banner h3 {
+  color: #0056b3;
+  font-weight: 700;
+}
+
+#used-market-banner .categories {
+  font-size: 0.85rem;
+  color: #007bff;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+#used-market-banner p {
+  color: #333;
+  font-size: 1.05rem;
+}
+
+/* Buttons */
+#used-market-banner .btn {
+  background-color: #007bff;
+  border-color: #007bff;
+  color: #fff;
+  transition: all 0.3s ease;
+}
+
+#used-market-banner .btn:hover {
+  background-color: #0056b3;
+  border-color: #004a99;
+}
+
+/* Nav links */
+#used-market-banner .nav-link {
+  color: #007bff;
+  font-weight: 600;
+  transition: color 0.3s;
+  text-decoration: none;
+}
+
+#used-market-banner .nav-link:hover {
+  color: #004a99;
+}
+
+/* Swiper pagination */
+#used-market-banner .swiper-pagination-bullet {
+  background: #007bff;
+  opacity: 0.5;
+}
+
+#used-market-banner .swiper-pagination-bullet-active {
+  opacity: 1;
+  transform: scale(1.2);
+}
+
+/* Category icons under "All Your Faves" */
+#used-market-banner .row .col-4 img {
+  max-width: 70px;
+  transition: transform 0.3s;
+}
+
+#used-market-banner .row .col-4 img:hover {
+  transform: scale(1.05);
+}
+
+
+.category-icon {
+  width: 100%;
+  height: 150px;
+  object-fit: contain; /* Instead of cover */
+  background-color: #f8f9fa; /* Light background so empty space isn't obvious */
+  border-radius: 0.5rem;
+}
+
+/* Optional: center the text if it's not aligning */
+.category-icon + .nav-link {
+  display: block;
+  margin-top: 0.5rem;
+  font-size: 1rem;
+  color: #333;
+}
+
+
+#logoo {
+  height: 70px;
+  width: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+#logoo img {
+  max-height: 100%;
+  max-width: 100%;
+  height: auto;
+  width: auto;
+  object-fit: contain;
+}
+
+
+
+
+/**categirue bellow slides*/
+
+/* Base styles for custom category section */
+.custom-category {
+  text-align: center;
+  transition: transform 0.3s ease-in-out;
+  color: #1a1a1a;
+}
+
+.custom-category:hover .category-title {
+  animation: flashText 1s infinite;
+}
+
+.custom-category:hover .category-icon {
+  transform: scale(1.05);
+}
+
+.category-icon {
+  width: 100px;
+  height: 100px;
+  margin: 0 auto 10px;
+  border-radius: 50%;
+  background-color: #e6f2ff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  box-shadow: 0 0 10px rgba(0, 123, 255, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.category-icon img {
+  max-width: 60%;
+  max-height: 60%;
+}
+
+.category-title {
+  font-size: 1rem;
+  color: #007bff;
+  margin-top: 8px;
+  transition: all 0.3s ease;
+}
+
+/* Flash animation for text on hover */
+@keyframes flashText {
+  0%   { opacity: 1; }
+  50%  { opacity: 0.5; color: #00aaff; }
+  100% { opacity: 1; }
+}
+
+.category-card {
+  background-color: #f8f9ff; /* very light blue */
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  text-align: center;
+  transition: transform 0.2s ease;
+  border: 1px solid #d0e0f0;
+  transition: box-shadow 0.3s ease, transform 01s ease;
+}
+.category-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.12);
+}
+.category-card img {
+  width: 100%;
+  border-radius: 8px;
+}
+.category-card p {
+  margin-top: 8px;
+  font-weight: 600;
+  color: #1a1a1a;
+}
+.category-card:hover {
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+  transform: translateY(-6px);
+}
+
+
+
+/**REGISTER FORM*/
+/* Signup Section Container */
+section.py-5 {
+  background-color: #f8faff; /* very light blue background */
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #222;
+}
+
+/* Background pattern wrapper */
+.bg-secondary {
+  background-color: #e6f0ff; /* light blue background for the container */
+  background-size: contain;
+  background-position: center right;
+  background-repeat: no-repeat;
+}
+
+/* Left text side */
+section.py-5 .col-md-6.text-white {
+  color: #004085; /* dark blue text */
+}
+
+section.py-5 h2.display-4 {
+  font-weight: 700;
+  color: #003366; /* deeper blue */
+}
+
+section.py-5 h2 .text-primary {
+  color: #007bff; /* your primary blue */
+}
+
+section.py-5 p.lead {
+  font-size: 1.25rem;
+  margin-top: 1rem;
+  color: #0056b3;
+}
+
+section.py-5 a.text-primary {
+  color: #007bff;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+section.py-5 a.text-primary:hover {
+  text-decoration: underline;
+}
+
+/* Right form side container */
+section.py-5 .col-md-6.bg-light {
+  background-color: #ffffff;
+  border-radius: 1rem;
+  box-shadow: 0 8px 20px rgba(0, 123, 255, 0.1);
+  padding: 2rem 2.5rem;
+}
+
+/* Form labels */
+section.py-5 label.form-label {
+  font-weight: 600;
+  color: #003366;
+}
+
+/* Email input */
+section.py-5 input.form-control-lg {
+  border: 2px solid #007bff;
+  border-radius: 0.5rem;
+  transition: border-color 0.3s ease;
+  font-size: 1.1rem;
+  padding: 0.75rem 1rem;
+}
+
+section.py-5 input.form-control-lg:focus {
+  border-color: #0056b3;
+  box-shadow: 0 0 8px rgba(0, 123, 255, 0.3);
+  outline: none;
+}
+
+/* Submit button */
+section.py-5 button.btn-primary {
+  background-color: #007bff;
+  border: none;
+  font-weight: 700;
+  font-size: 1.2rem;
+  padding: 0.85rem;
+  border-radius: 0.5rem;
+  transition: background-color 0.3s ease;
+}
+
+section.py-5 button.btn-primary:hover {
+  background-color: #0056b3;
+  cursor: pointer;
+}
+
+/* Social buttons container */
+section.py-5 .d-flex.justify-content-center.gap-3 {
+  margin-top: 1rem;
+}
+
+/* Social login buttons */
+section.py-5 button.btn-outline-primary {
+  border: 2px solid #007bff;
+  color: #007bff;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  background-color: white;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  font-size: 1rem;
+}
+
+section.py-5 button.btn-outline-primary:hover {
+  background-color: #007bff;
+  color: white;
+  cursor: pointer;
+}
+
+/* Social icons inside buttons */
+section.py-5 button.btn-outline-primary img {
+  height: 20px;
+  width: 20px;
+  object-fit: contain;
+}
+
+/* Responsive tweaks */
+@media (max-width: 767px) {
+  section.py-5 .row.align-items-center {
+    flex-direction: column;
+  }
+  section.py-5 .col-md-6.text-white,
+  section.py-5 .col-md-6.bg-light {
+    max-width: 100%;
+    padding: 1.5rem;
+  }
+}
+#regform{
+  color: #007bff !important;
+}
+
+/**footer*/
+.nav-link-hover {
+  position: relative !important;
+  display: inline-block !important;
+  text-decoration: none !important;
+  color: inherit !important;
+}
+
+.nav-link-hover::after {
+  content: "" !important;
+  position: absolute !important;
+  width: 0 !important;
+  height: 2px!important;
+  bottom: -2px!important ;
+  left: 0!important;
+  background-color: currentColor !important;
+  transition: width 0.3s ease !important;
+}
+
+.nav-link-hover:hover::after {
+  width: 100% !important;
+}
+
+
+
+
+
+#sub {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+#sub p {
+  margin: 0;
+  flex-shrink: 0;
+}
+
+#sub form {
+  display: flex;
+  flex-wrap: nowrap;
+  flex: 1;
+}
+
+#sub input[type="email"] {
+  border-right: none;
+  border-radius: 4px 0 0 4px;
+}
+
+#sub button {
+  border-radius: 0 4px 4px 0;
+  white-space: nowrap;
+}
